@@ -1,6 +1,6 @@
 from svmutil import *
-y_train, x_train = svm_read_problem('svmguide1'); # 3089 samples
-y_test, x_test = svm_read_problem('svmguide1.t'); # 4000 samples
+y_train, x_train = svm_read_problem('data/svmguide1'); # 3089 samples
+y_test, x_test = svm_read_problem('data/svmguide1.t'); # 4000 samples
 
 def minmax(X):
 	M = [-1e18] * len(X[0])
