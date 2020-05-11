@@ -2,7 +2,7 @@ from svmutil import *
 y, x = svm_read_problem('svmguide1'); # 3089 samples
 
 import random as rd
-SEED = 42
+SEED = 42 # change it freely
 rd.seed(SEED)
 rd.shuffle(x)
 rd.seed(SEED)
