@@ -31,8 +31,7 @@ minmaxScaling(x_train, m, M)
 minmaxScaling(x_test, m, M)
 
 prob = svm_problem(y_train, x_train)
-
-param = svm_parameter('-s 0 -c 1 -t 0')
+param = svm_parameter('-s 0 -c 1 -t 2') # RBF kernel
 m = svm_train(prob, param) # a ctype pointer
 
 svm_predict(y[TS:], x[TS:], m)
