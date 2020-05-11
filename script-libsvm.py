@@ -16,8 +16,8 @@ def minmaxScaling(X, m, M):
 		for j in range(1, len(X[0])+1):
 			X[i][j] = (X[i][j]-m[j-1]) / (M[j-1]-m[j-1]) 
 
-m, M = minmax(x_train)
-minmaxScaling(x_train, m, M)
+m, M = minmax(x_train) 
+minmaxScaling(x_train, m, M) # scale here
 minmaxScaling(x_test, m, M)
 
 prob = svm_problem(y_train, x_train)
