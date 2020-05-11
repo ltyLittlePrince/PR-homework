@@ -1,16 +1,6 @@
 from svmutil import *
-y, x = svm_read_problem('svmguide1'); # 3089 samples
-
-import random as rd
-SEED = 42 # change it freely
-rd.seed(SEED)
-rd.shuffle(x)
-rd.seed(SEED)
-rd.shuffle(y)
-
-TS = 2500 # train samples
-x_train, y_train = x[:TS], y[:TS]
-x_test, y_test = x[TS:], y[TS:]
+y_train, x_train = svm_read_problem('svmguide1'); # 3089 samples
+y_test, x_test = svm_read_problem('svmguide1.t'); # 4000 samples
 
 def minmax(X):
 	M = [-1e18] * len(X[0])
@@ -34,4 +24,4 @@ prob = svm_problem(y_train, x_train)
 param = svm_parameter('-s 0 -c 1 -t 2') # RBF kernel
 m = svm_train(prob, param) # a ctype pointer
 
-svm_predict(y[TS:], x[TS:], m)
+svm_predict(y_test, x_test, m)
